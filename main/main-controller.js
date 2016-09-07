@@ -1,8 +1,10 @@
 angular.module('myApp').controller('MainController', MainController);
-function MainController($http) {
+function MainController(FilmFactory) {
 	var vm  =this;
-	$http.get('http://swapi-tpiros.rhcloud.com/films').then(function (response){
-       vm.films = response.data;
-        console.log(response);
-    });
+	FilmFactory.getAllFilms().then(function(response){
+        vm.films =response;
+        //we no longer use response.data because
+        //in the dataFactory.js, we has function complete(response) 
+        //that return response.data; already
+    })
 }

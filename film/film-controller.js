@@ -1,9 +1,13 @@
 angular.module('myApp').controller('FilmController', FilmController);
-function FilmController($http, $routeParams) {
+//1: inject Filmfactory, we dont use $http anymore
+function FilmController($routeParams,FilmFactory) {
 	var vm  =this;
     var id = $routeParams.id;
-	$http.get('http://swapi-tpiros.rhcloud.com/films/' + id).then(function(response){
-       vm.film =response.data; 
-        console.log(response);
+    //more info, go to datafactory.js
+	FilmFactory.getOneFilm(id).then(function(response){
+       vm.film =response; 
+       //we no longer use response.data because
+        //in the dataFactory.js, we has function complete(response) 
+        //that return response.data; already
     });
 }
