@@ -1,7 +1,16 @@
-<ul>
-    <li ng-repeat="film in vm.films"> 
-    <h1>{{film.title}}</h1>
-    <p>{{film.plot}}</p>
-    
+<p> {{vm.date1 | dateSuffix }}</p>
+<p> {{vm.date2 | dateSuffix }}</p>
+<p> {{vm.date3 | dateSuffix }}</p>
+<p> {{vm.date4 | dateSuffix }}</p>
+
+   
+
+   <ul>
+    <li ng-repeat="film in vm.films">
+       <h1> {{film.director | reverse}}</h1>
+        <h3>{{film.title}}</h3>
+        <p>{{film.plot}}</p>
     </li>
 </ul>
+
+
