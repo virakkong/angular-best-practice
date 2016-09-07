@@ -2,11 +2,11 @@ angular.module('myApp',['ngRoute']).config(config);
 function config($routeProvider) {
 
 	$routeProvider.when('/', {
-		templateUrl: 'templates/films.html',
+		templateUrl: 'main/main.html',
 		controller: 'MainController',
 		controllerAs: 'vm'
     }).when('/film/:id', {
-		templateUrl: 'templates/film.html',
+		templateUrl: 'film/film.html',
 		controller: 'FilmController',
 		controllerAs: 'vm'
 	});

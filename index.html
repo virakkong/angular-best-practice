@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width">
   <title>JS Bin</title>
 </head>
-<body>
+<style>
+    .ng-cloak,[ng-cloak],[ng\:cloak]{
+        display: none !important;
+    }
+
+</style>
+<body ng-cloak>
 
 <div ng-view></div>
 
@@ -13,6 +19,9 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.min.js"></script>
 <script  src="app.js"></script>
-<script src="controller.js"></script>
+<!--<script src="controller.js"></script>-->
+<script src="film/film-controller.js"></script>
+<script src="main/main-controller.js"></script>
+
 </body>
 </html>
